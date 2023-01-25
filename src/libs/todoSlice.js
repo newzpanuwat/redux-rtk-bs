@@ -13,7 +13,6 @@ export const todoSlice = createSlice({
     },
     setComplete: (state, action) => {
       const todo = state.items.find((todo) => todo.id === action.payload);
-      console.log(todo.completed);
       if (todo) {
         todo.completed = !todo.completed;
       }
