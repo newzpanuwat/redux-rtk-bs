@@ -11,7 +11,7 @@ export function Todo() {
   return (
     <>
       <Title>Redux RTK</Title>
-      <FormInput>
+      <FormLabel>
         <input type="text" value={todoTitle} onChange={(e) => setTodoTitle(e.target.value)} />
         <Button
           onClick={() =>
@@ -25,14 +25,14 @@ export function Todo() {
         >
           Add Items
         </Button>
-      </FormInput>
+      </FormLabel>
       {todos.map((todo, idx) => (
-        <FormInput key={idx}>
+        <FormLabel key={idx}>
           <span>
             {idx + 1}: {todo.title} &nbsp;
             <button onClick={() => dispatch(setComplete(todo.id))}>Done</button>
           </span>
-        </FormInput>
+        </FormLabel>
       ))}
       {JSON.stringify(todos)}
     </>
@@ -45,7 +45,7 @@ const Title = styled.h1`
   color: palevioletred;
 `;
 
-const FormInput = styled.div`
+const FormLabel = styled.div`
   display: flex;
   justify-content: center;
 `;
